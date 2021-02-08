@@ -16,13 +16,18 @@ export default function App() {
   return (
     <div className="App">
       <h1>Video upload</h1>
-      <input type="file" accept="video/*" onChange={uploadVideos} />
+      <input type="file" onChange={uploadVideos} />
       <hr />
       <video width="480" controls id="video">
         <source id="src" src="video.mp4" />
       </video>
       <hr />
-      <button id="start">Start</button>
+      <button
+        id="start"
+        onClick={() => document.getElementById("video").play()}
+      >
+        Start playing
+      </button>
     </div>
   );
 }
